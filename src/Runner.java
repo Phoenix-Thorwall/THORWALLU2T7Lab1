@@ -10,21 +10,48 @@ public class Runner
         int firStrLen = firStr.length();
         System.out.println("String Length: " + firStrLen);
 
-        if (firStrLen % 2 == 0)
+        System.out.println("First Half: " + firStr.substring(0, firStrLen / 2));
+        System.out.println("Second Half: " + firStr.substring(firStrLen / 2));
+
+        System.out.print("Enter Second String: ");
+        String secStr = scan.nextLine();
+        int secStrLen = secStr.length();
+
+        if (firStrLen > secStrLen)
         {
-            System.out.println("First Half: " + firStr.substring(0, firStrLen / 2));
-            System.out.println("Second Half: " + firStr.substring(firStrLen / 2));
+            System.out.println(firStr + " is longer");
+        }
+        else if (secStrLen > firStrLen)
+        {
+            System.out.println(secStr + " is longer");
+        }
+        else if (secStrLen == firStrLen)
+        {
+            System.out.println("Both strings are the same length!");
+        }
+
+
+        if (firStr.compareTo(secStr) <= -1)
+        {
+            System.out.println(firStr + " is first alphabetically");
+        }
+        else if (firStr.compareTo(secStr) >= 1)
+        {
+            System.out.println(secStr + "is first alphabetically");
+        }
+        else if (firStr.equals(secStr))
+        {
+            System.out.println("The strings are the same");
+        }
+
+
+        if (firStr.indexOf(secStr) == -1)
+        {
+            System.out.println(secStr + " is NOT found in " + firStr);
         }
         else
         {
-            System.out.println("First Half: " + firStr.substring(0, firStrLen / 2));
-            System.out.println("Second Half: " + firStr.substring(firStrLen / 2));
+            System.out.print(secStr + " is found in " + firStr + " at index " + firStr.indexOf(secStr));
         }
-
-        System.out.println("Enter Second String: ");
-
-
-
     }
-
 }
