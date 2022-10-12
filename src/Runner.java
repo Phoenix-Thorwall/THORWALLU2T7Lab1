@@ -1,12 +1,30 @@
+import java.util.Scanner;
 public class Runner
 {
     public static void main(String[]args)
     {
-        String par1 = "I'm a string that will have one substring parameter!";
-        String par2 = "I'm a string that will have two substring parameters!";
-        String par1Sub = par1.substring(27,31);
-        String par2Sub = par2.substring(14,31) + " " + par2.substring(14,18);
-        System.out.println(par1Sub);
-        System.out.println(par2Sub + "s");
+        Scanner scan = new Scanner (System.in);
+
+        System.out.print("Enter First String: ");
+        String firStr = scan.nextLine();
+        int firStrLen = firStr.length();
+        System.out.println("String Length: " + firStrLen);
+
+        if (firStrLen % 2 == 0)
+        {
+            System.out.println("First Half: " + firStr.substring(0, firStrLen / 2));
+            System.out.println("Second Half: " + firStr.substring(firStrLen / 2));
+        }
+        else
+        {
+            System.out.println("First Half: " + firStr.substring(0, firStrLen / 2));
+            System.out.println("Second Half: " + firStr.substring(firStrLen / 2));
+        }
+
+        System.out.println("Enter Second String: ");
+
+
+
     }
+
 }
